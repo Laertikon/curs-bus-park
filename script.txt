@@ -1,0 +1,37 @@
+-- Create table "Buses"
+CREATE TABLE Buses (
+    bus_id SERIAL PRIMARY KEY,
+    model VARCHAR(100),
+    year INTEGER,
+    registration_number VARCHAR(20),
+    capacity INTEGER
+);
+
+-- Create table "Drivers"
+CREATE TABLE Drivers (
+    driver_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INTEGER,
+    experience INTEGER,
+    license_number VARCHAR(20)
+);
+
+-- Create table "Routes"
+CREATE TABLE Routes (
+    route_id SERIAL PRIMARY KEY,
+    start_stop VARCHAR(100),
+    end_stop VARCHAR(100),
+    duration INTEGER,
+    distance NUMERIC,
+    frequency INTEGER
+);
+
+-- Create table "Assignments"
+CREATE TABLE Assignments (
+    assignment_id SERIAL PRIMARY KEY,
+    bus_id INTEGER REFERENCES Buses(bus_id),
+    route_id INTEGER REFERENCES Routes(route_id),
+    driver_id INTEGER REFERENCES Drivers(driver_id),
+    date_assigned DATE NOT NULL
+);

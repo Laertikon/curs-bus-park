@@ -1,0 +1,24 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "arrow-parens": [
+            "error",
+            "always"
+        ],
+        "indent": [2,2],
+        "no-param-reassign": 0,
+        "no-plusplus": 0,
+        "consistent-return": 0,
+        "no-dupe-keys": 0,
+        "max-len": 0,
+        "no-await-in-loop": 0,
+        "no-continue": 0,
+        "linebreak-style": [0, "error", "windows"]
+    },
+    "env": {
+        "jest": true
+    }
+}
